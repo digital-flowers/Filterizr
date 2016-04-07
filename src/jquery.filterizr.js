@@ -944,6 +944,7 @@
             self.css(filterOutCss);
             //Tag as filteringOut for transitionend event
             self._filteringOut = true;
+            self._filteringIn = false;
         },
 
         /**
@@ -958,6 +959,7 @@
             $(self).removeClass('filteredOut');
             //Tag as filtering in for transitionend event
             self._filteringIn = true;
+            self._filteringOut = false;
             self._lastPos 	  = targetPos;
             //Auto add translate to transform over user-defined filterIn styles
             filterInCss.transform += ' translate3d(' + targetPos.left + 'px,' + targetPos.top + 'px, 0)';
